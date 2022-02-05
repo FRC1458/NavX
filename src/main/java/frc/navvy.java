@@ -1,4 +1,4 @@
-package org.usfirst.frc.team2465.robot;
+package frc;
 
 import com.kauailabs.navx.frc.AHRS;
 
@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.SerialPort;
-import edu.wpi.first.wpilibj.SampleRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -57,8 +56,8 @@ public class navvy{
   /**
    * Display navX-MXP Sensor Data on Smart Dashboard
    */
-  public void operatorControl() {
-      while (isOperatorControl() && isEnabled()) {
+  public void operatorControl(boolean running) {
+      while (running) {
           
           Timer.delay(0.020);		/* wait for one motor update time period (50Hz)     */
           
